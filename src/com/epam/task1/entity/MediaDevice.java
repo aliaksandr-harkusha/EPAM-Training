@@ -12,11 +12,11 @@ public abstract class MediaDevice extends Device {
 		this.currentChannel = currentChannel;
 	}
 
-	MediaDevice() {
+	public MediaDevice() {
 		super();
 	}
 
-	MediaDevice(String deviceName, double capacity) {
+	public MediaDevice(String deviceName, int capacity) {
 		super(deviceName, capacity);
 	}
 }

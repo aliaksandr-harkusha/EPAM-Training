@@ -32,13 +32,13 @@ public class Radio extends MediaDevice {
 		super("Radio", 5);
 	}
 
-	public Radio(String deviceName, double capacity) {
+	public Radio(String deviceName, int capacity) {
 		super(deviceName, capacity);
 	}
 
 	@Override
 	public String toString() {
-		return "Radio [CurrentChannel=" + getCurrentChannel() + ", DeviceName()" + getDeviceName()
+		return "Radio [CurrentChannel=" + getCurrentChannel() + ", DeviceName=" + getDeviceName()
 				+ ", Capacity=" + getCapacity() + ", PowerOn=" + isPowerOn() + "]";
 	}
 	

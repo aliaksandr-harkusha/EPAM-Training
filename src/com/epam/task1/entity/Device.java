@@ -1,10 +1,12 @@
 package com.epam.task1.entity;
 
+import java.util.Comparator;
+
 import com.epam.task1.service.PowerInterface;
 
-abstract class Device implements PowerInterface {
+public abstract class Device implements PowerInterface {
 	private String deviceName;
-	private double capacity;
+	private int capacity;
 	private boolean powerOn = false;
 
 	public String getDeviceName() {
@@ -15,11 +17,11 @@ abstract class Device implements PowerInterface {
 		this.deviceName = deviceName;
 	}
 
-	public double getCapacity() {
+	public int getCapacity() {
 		return capacity;
 	}
 
-	void setCapacity(double capacity) {
+	void setCapacity(int capacity) {
 		this.capacity = capacity;
 	}
 
@@ -31,13 +33,20 @@ abstract class Device implements PowerInterface {
 		this.powerOn = powerOn;
 	}
 
-	Device() {
+	public Device() {
 		super();
 	}
 
-	Device(String deviceName, double capacity) {
+	public Device(String deviceName, int capacity) {
 		super();
 		this.deviceName = deviceName;
 		this.capacity = capacity;
 	}
+	
+	public static final Comparator<Device> COMPARE_BY_CAPACITY = new Comparator<Device>() {
+        @Override
+        public int compare(Device lhs, Device rhs) {
+            return lhs.getCapacity() - rhs.getCapacity();
+        }
+    };
 }

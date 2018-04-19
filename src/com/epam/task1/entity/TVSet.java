@@ -40,7 +40,7 @@ public class TVSet extends MediaDevice {
 		super("TV", 100);
 	}
 
-	public TVSet(String deviceName, double capacity) {
+	public TVSet(String deviceName, int capacity) {
 		super(deviceName, capacity);
 	}
 

@@ -80,7 +80,7 @@ public class Laptop extends Device {
 		this.hddCapacity = 1024;
 	}
 
-	public Laptop(String deviceName, double capacity, String cpuModel, int ram, int hddCapacity) {
+	public Laptop(String deviceName, int capacity, String cpuModel, int ram, int hddCapacity) {
 		super(deviceName, capacity);
 		this.cpuModel = cpuModel;
 		this.ram = ram;
@@ -90,8 +90,8 @@ public class Laptop extends Device {
 	@Override
 	public String toString() {
 		return "Laptop [DeviceName=" + getDeviceName() + ", cpuModel=" + cpuModel + ", ram=" + ram + ", hddCapacity="
-				+ hddCapacity + ", pluggedIntoASocket=" + pluggedIntoASocket + ", isPowerOn()=" + isPowerOn()
-				+ ", getCapacity()=" + getCapacity() + "]";
+				+ hddCapacity + ", pluggedIntoASocket=" + pluggedIntoASocket + ", PowerOn=" + isPowerOn()
+				+ ", Capacity=" + getCapacity() + "]";
 	}
 
 }

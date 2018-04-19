@@ -35,10 +35,9 @@ public class Fridge extends Device {
 		super("Fridge", 40);
 	}
 
-	public Fridge(String deviceName, double capacity, boolean deepFreezerAvailable, boolean doorOpened) {
+	public Fridge(String deviceName, int capacity, boolean deepFreezerAvailable) {
 		super(deviceName, capacity);
 		this.deepFreezerAvailable = deepFreezerAvailable;
-		this.doorOpened = doorOpened;
 	}
 
 	@Override
