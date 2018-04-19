@@ -1,13 +1,11 @@
-package com.epam.task1;
+package com.epam.task1.entity;
 
-public class Radio extends Device {
+public class Radio extends MediaDevice {
 
-	private String currentStation;
-
-	public void playStation() {
+	public void playMusic() {
 		if (this.isPowerOn()) {
-			if (this.currentStation != null) {
-				System.out.println(this.currentStation + "is playing: la-la-la");
+			if (this.getCurrentChannel() != null) {
+				System.out.println(this.getCurrentChannel() + " is playing: la-la-la");
 			} else {
 				System.out.println("Tune the radio");
 			}
@@ -16,18 +14,34 @@ public class Radio extends Device {
 		}
 	}
 
-	public String getCurrentStation() {
-		return currentStation;
+	public void tuneRadio(String stationName) {
+		this.setCurrentChannel(stationName);
 	}
 
-	public void setCurrentStation(String currentStation) {
-		this.currentStation = currentStation;
+	@Override
+	public void powerOn() {
+		this.setPowerOn(true);
+	}
+
+	@Override
+	public void powerOff() {
+		this.setPowerOn(false);
+	}
+
+	public Radio() {
+		super("Radio", 5);
+	}
+
+	public Radio(String deviceName, double capacity) {
+		super(deviceName, capacity);
 	}
 
 	@Override
 	public String toString() {
-		return "Radio [currentStation=" + currentStation + ", DeviceName=" + getDeviceName() + ", Capacity()="
-				+ getCapacity() + ", isPowerOn()=" + isPowerOn() + "]";
+		return "Radio [CurrentChannel=" + getCurrentChannel() + ", DeviceName()" + getDeviceName()
+				+ ", Capacity=" + getCapacity() + ", PowerOn=" + isPowerOn() + "]";
 	}
+	
+	
 
 }

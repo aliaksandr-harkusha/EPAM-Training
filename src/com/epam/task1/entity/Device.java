@@ -1,6 +1,8 @@
-package com.epam.task1;
+package com.epam.task1.entity;
 
-public class Device {
+import com.epam.task1.service.PowerInterface;
+
+abstract class Device implements PowerInterface {
 	private String deviceName;
 	private double capacity;
 	private boolean powerOn = false;
@@ -17,7 +19,7 @@ public class Device {
 		return capacity;
 	}
 
-	public void setCapacity(double capacity) {
+	void setCapacity(double capacity) {
 		this.capacity = capacity;
 	}
 
@@ -25,7 +27,17 @@ public class Device {
 		return this.powerOn;
 	}
 
-	public void setPowerOn(boolean powerOn) {
+	void setPowerOn(boolean powerOn) {
 		this.powerOn = powerOn;
+	}
+
+	Device() {
+		super();
+	}
+
+	Device(String deviceName, double capacity) {
+		super();
+		this.deviceName = deviceName;
+		this.capacity = capacity;
 	}
 }
