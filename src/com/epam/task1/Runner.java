@@ -1,3 +1,4 @@
+//лучше добавить также в какой-либо пакет типа runner или controller
 package com.epam.task1;
 
 import java.util.ArrayList;
@@ -10,6 +11,7 @@ import com.epam.task1.service.SelectionService;
 public class Runner {
 	public static void main(String[] args) {
 		
+		//лучше присваивать родительскому интерфейсу из иерархии - в данном случае List - для обеспечения приводимости типов
 		ArrayList<Device> listOfDevices = new ArrayList<>();
 		
 		listOfDevices.add(new Radio());
@@ -20,11 +22,17 @@ public class Runner {
 		
 		
 		System.out.println("--------------- unsorted -------------");
+		//с точки зрения java8 - все верно
+		//но целевая версия у нас java6-7
+		//поэтому лучше сделай обычный for(){println()}
+		//пройдись также по проекту и замени
 		listOfDevices.forEach(System.out::println);	
 		
 		
 		System.out.println("--------------- the whole power-capacity -------------");
 		int sumCapacity = 0;
+		//у тебя же в листе listOfDevices объекты класса Device, а не Object
+                //лучше по ним и итерироваться и потом приводить не надо будет (стр.36)
 		for(Object device : listOfDevices) {
 			sumCapacity += ((Device) device).getCapacity();
 		}
