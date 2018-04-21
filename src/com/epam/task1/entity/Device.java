@@ -34,6 +34,7 @@ public abstract class Device implements PowerInterface {
 	}
 
 	//конструкторы всегда объявляются перед get/set-методами
+        //так для всех классов сделай
 	public Device() {
 		super();
 	}
