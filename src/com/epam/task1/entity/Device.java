@@ -33,6 +33,7 @@ public abstract class Device implements PowerInterface {
 		this.powerOn = powerOn;
 	}
 
+	//конструкторы всегда объявляются перед get/set-методами
 	public Device() {
 		super();
 	}
@@ -43,6 +44,9 @@ public abstract class Device implements PowerInterface {
 		this.capacity = capacity;
 	}
 	
+	//лучше компаратор - не выносить в поле класса
+	//так у тебя получится анонимный класс при компиляции
+	//лучше просто пусть этот класс реализует интерфейс Comparator или Comparable с реализацией необходимого метода сравнения
 	public static final Comparator<Device> COMPARE_BY_CAPACITY = new Comparator<Device>() {
         @Override
         public int compare(Device lhs, Device rhs) {
