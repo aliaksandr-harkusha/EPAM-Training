@@ -42,6 +42,8 @@ public class Fridge extends Device {
 
 	@Override
 	public String toString() {
+		//добавь здесь вместо просто слова Fridge - что-то типа getClass().getSimpleName()
+		//чтобы при переименовании класса или пакета не пришлось менять метод toString - об этом еще поговорим потом
 		return "Fridge [deepFreezerAvailable=" + deepFreezerAvailable + ", doorOpened=" + doorOpened
 				+ ", DDeviceName=" + getDeviceName() + ", Capacity=" + getCapacity() + ", PowerOn="
 				+ isPowerOn() + "]";
